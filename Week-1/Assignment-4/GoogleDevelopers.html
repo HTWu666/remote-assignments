@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google for Developers</title>
+    <link rel="stylesheet" href="GoogleDevelopers.css">
+</head>
+<body>
+    <nav>
+        <img src="https://www.gstatic.com/devrel-devsite/prod/vbad4fd6eb290ad214822e7a397f826be8dbcc36ca2a922ba48f41fb14286829c/developers/images/lockup-new.svg" class="nav-logo" alt="Google for Developers">
+        
+        <div class="nav-item">
+            <div class="products">
+                <a href="https://developers.google.com/products?hl=zh-tw" class="item">Products</a>
+                <img src="https://cdn3.iconfinder.com/data/icons/neutro-interface/32/next-256.png" id="products-dropdown-btn" class="dropdown-btn" onclick="showProducts()">
+                <div id="products-dropdown-menu">
+                    <ul class="develop">
+                        <li>Develop</li>
+                        <li><a href="https://developer.android.com/?hl=zh-tw">Android</a></li>
+                        <li><a href="https://chromeos.dev/">ChromeOS</a></li>
+                        <li><a href="https://cloud.google.com/?hl=zh-tw">Cloud</a></li>
+                        <li><a href="https://firebase.google.com/?hl=zh-tw">Firebase</a></li>
+                        <li><a href="https://flutter.dev/">Flutter</a></li>
+                        <li><a href="https://developers.google.com/assistant?hl=zh-tw">Google Assistant</a></li>
+                        <li><a href="https://developers.google.com/maps?hl=zh-tw">Google Maps Plateform</a></li>
+                        <li><a href="https://developers.google.com/workspace?hl=zh-tw">Google Workspace</a></li>
+                        <li><a href="https://www.tensorflow.org/?hl=zh-tw">Tensor Flow</a></li>
+                    </ul>
+
+                    <ul class="grow">
+                        <li>Grow</li>
+                        <li><a href="https://firebase.google.com/?hl=zh-tw">Firebase</a></li>
+                        <li><a href="https://developers.google.com/google-ads?hl=zh-tw">Google Ads</a></li>
+                        <li><a href="https://developers.google.com/analytics?hl=zh-tw">Google Analytics</a></li>
+                        <li><a href="https://developer.android.com/distribute/?hl=zh-tw">Google Play</a></li>
+                        <li><a href="https://developers.google.com/search?hl=zh-tw">Search</a></li>
+                        <li><a href="https://developers.google.com/web/fundamentals/engage-and-retain/push-notifications?hl=zh-tw">Web Push and Notification APIs</a></li>
+                    </ul>
+
+                    <ul class="earn">
+                        <li>Earn</li>
+                        <li><a href="https://developers.google.com/admob?hl=zh-tw">AdMob</a></li>
+                        <li><a href="https://developers.google.com/google-ads/api?hl=zh-tw">Google Ads API</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="solutions">
+                <a href="https://developers.google.com/solutions/catalog?hl=zh-tw">Solutions</a>
+            </div>
+
+            <div class="events">
+                <a href="https://developers.google.com/events?hl=zh-tw">Events</a>
+            </div>
+
+            <div class="learn">
+                <a href="https://developers.google.com/learn?hl=zh-tw">Learn</a>
+            </div>
+
+            <div class="community">
+                <a href="https://developers.google.com/community?hl=zh-tw">Community</a>
+                <img src="https://cdn3.iconfinder.com/data/icons/neutro-interface/32/next-256.png" id="community-dropdown-btn" class="dropdown-btn" onclick="showCommunity()">
+            </div>
+
+            <div class="developer-profile">
+                <a href="https://developers.google.com/profile/u/me?hl=zh-tw">Developer Profile</a>
+            </div>
+
+            <div class="blog">
+                <a href="https://developers.googleblog.com/">Blog</a>
+            </div>
+        </div>
+        
+        <div class="nav-search">
+            <img src="https://cdn1.iconfinder.com/data/icons/science-technology-outline-24-px/24/Magnifier_magnifying_glass_search_search_web_searching_glass-256.png" class="search-img">
+            <input type="text" placeholder="搜尋結果" id="searchInput">
+        </div>
+
+        <div id="language-menu" onclick="showLangMenu()">
+            <img src="https://cdn3.iconfinder.com/data/icons/internet-and-web-4/78/internt_web_technology-01-256.png" class="lang-img">
+            <div id="language">English</div>
+            <img src="https://cdn3.iconfinder.com/data/icons/neutro-interface/32/next-256.png" id="lang-dropdown-btn" class="dropdown-btn" onclick="showLanguageMenu()">
+            <div id="lang-option">
+                <ul>
+                    <li id="en" onclick="showEn()">English</li>
+                    <li id="zh-tw" onclick="showZhTw()">中文 – 繁體</li>
+                    <li id="zh-cn" onclick="showZhCn()">中文 – 简体</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="create-profile">
+            <img src="https://cdn0.iconfinder.com/data/icons/mobile-basic-vol-1/32/Dot_Menu-512.png" id="create-profile-img" onclick="showCreateProfileWindow()">
+            <div id="create-profile-window">
+                <img src="https://www.gstatic.com/devrel-devsite/prod/vbad4fd6eb290ad214822e7a397f826be8dbcc36ca2a922ba48f41fb14286829c/developers/images/lockup-new.svg">
+                <div id="create-profile-window-title">Create your Google Developer Profile</div>
+                <div id="create-profile-window-description">Personalize your experience, earn badges and share your success.</div>
+                <div id="create-profile-window-btn">
+                    <button id="dismiss" onclick="dismiss()">Dismiss</button>
+                    <button id="start" onclick="start()">Start</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="section1">
+        <div id="section1-left">
+            <div id="section1-left-title">Build<br>smarter,<br>ship faster</div>
+            <div id="section1-left-description">Unlock creativity and simplify your workflow with open, integrated solutions.</div>
+        </div>
+        
+        <div id="section1-right">
+            <video autoplay loop muted>
+                <source src="https://developers.google.com/static/homepage-assets/images/build-smarter.mp4?hl=zh-tw" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <div id="section1-right-app">
+                <div id="section1-right-title">I'm building for:</div>
+                <a href="https://developers.google.com/focus/mobile-app-development?hl=zh-tw">Mobile</a>
+                <a href="https://developers.google.com/focus/web-development?hl=zh-tw">Web</a>
+                <a href="https://developers.google.com/focus/ai-development?hl=zh-tw">AI</a>
+                <a href="https://developers.google.com/focus/cloud-development?hl=zh-tw">Cloud</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+<script>
+    function showProducts(){
+        let menu = document.querySelector("#products-dropdown-menu");
+        if(menu.style.display === "none"){
+            menu.style.display = "flex";
+        } else {
+            menu.style.display = "none";
+        }
+    }
+
+    function showLangMenu(){
+        let menu = document.querySelector("#lang-option");
+        if(menu.style.display === "none"){
+            menu.style.display = "block";
+        } else{
+            menu.style.display = "none";
+        }
+    }
+
+    function showEn(){
+        window.location.href = "https://developers.google.com/";
+    }
+
+    function showZhTw(){
+        window.location.href = "https://developers.google.com/?hl=zh-tw";
+    }
+
+    function showZhCn(){
+        window.location.href = "https://developers.google.com/?hl=zh-cn";
+    }
+
+    function showCreateProfileWindow(){
+        let window = document.querySelector("#create-profile-window");
+        if(window.style.display === "none"){
+            window.style.display = "block";
+        } else{
+            window.style.display = "none";
+        }
+    }
+
+    function dismiss(){
+        let window = document.querySelector("#create-profile-window");
+        window.style.display = "none";
+    }
+
+    function start(){
+        window.location.href = "https://developers.google.com/profile/u/new?hl=en";
+    }
+</script>
+</html>
