@@ -9,7 +9,7 @@ function countAandB(input){
 }
 
 function toNumber(input){
-    let newInput = [];
+    const newInput = [];
     for(let i = 0; i < input.length; i++){
         let letter = input[i];
         if(letter >= "a" && letter <= "z"){
