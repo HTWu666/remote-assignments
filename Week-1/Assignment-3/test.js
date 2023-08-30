@@ -9,17 +9,13 @@ function countAandB(input){
 }
 
 function toNumber(input){
-    let obj = {
-        "a": 1,
-        "b": 2,
-        "c": 3,
-        "d": 4,
-        "e": 5
-    }
     let newInput = [];
     for(let i = 0; i < input.length; i++){
-        let number = obj[input[i]];
-        newInput.push(number);
+        let letter = input[i];
+        if(letter >= "a" && letter <= "z"){
+            let number = letter.charCodeAt(0) - 96; // ascii code of "a" is 97
+            newInput.push(number);
+        }
     }
     return newInput;
 }

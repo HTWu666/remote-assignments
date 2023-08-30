@@ -63,7 +63,7 @@ section{
 
 }
 
-.content-box1, .content-box2, .content-box3, .content-box4{
+.all-content-box{
     background-color: rgb(132, 144, 148);
     height: 150px;
     text-align: center;
