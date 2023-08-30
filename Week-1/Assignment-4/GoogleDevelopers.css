@@ -1,7 +1,7 @@
 body{
     margin: 0px;
     font-family: Roboto,Noto Sans,Noto Sans JP,Noto Sans KR,Noto Naskh Arabic,Noto Sans Thai,Noto Sans Hebrew,Noto Sans Bengali,sans-serif;
-    overflow: hidden;
+    overflow-y:scroll;
 }
 nav{
     display: flex;
@@ -244,13 +244,15 @@ a:visited{
 #section1{
     height: 85vh;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
 }
 
 #section1-left{
-    width: 50%;
-    padding-left: 20px;
+    flex-basis: 600px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding-left: 60px;
     margin-right: 20px;
 }
 
@@ -265,12 +267,13 @@ a:visited{
 }
 
 #section1-right{
-    width: 50%;
-    padding-right: 20px;
+    flex-basis: 600px;
+    flex-grow: 1;
+    padding-right: 60px;
 }
 
 #section1-right video{
-    width: 80%;
+    width: 100%;
     height: 100%;
     margin-bottom: 30px;
 }
