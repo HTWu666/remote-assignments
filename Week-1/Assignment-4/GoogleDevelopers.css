@@ -251,7 +251,6 @@ a:visited{
 #section1-left{
     flex-basis: 600px;
     flex-grow: 1;
-    flex-shrink: 1;
     padding-left: 60px;
     margin-right: 20px;
 }
