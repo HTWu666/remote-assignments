@@ -286,18 +286,213 @@ a:visited{
     flex-wrap: wrap;
 }
 
-#section1-right-app-link div{
+#section1-right-app-link > div{
     width: 60px;
     height: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 20px;
     padding-right: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
-    border: 2px solid rgb(12, 100, 253);
+    border: 2px solid black;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#section2{
+    background-color: rgb(238, 240, 242);
+}
+
+#section2InnerContainer{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#tagScrollContainer{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 96.5vw;
+}
+
+#tagContainer{
+    width: max-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+}
+
+.allTag{
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    margin-right: 10px;
+}
+
+.section2Btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid gainsboro;
+    font-size: large;
+    font-weight: bold;
+    background-color: white;
+}
+
+.tagBtn{
+    position: relative;
+    bottom: 60px;
+}
+
+#tagLeft{
+    right: 17px;
+}
+
+#tagRight{
+    left: 92.5vw;
+}
+
+#articleScrollContainer{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 97vw;
+}
+
+#articleContainer{
+    width:200%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.allArticle{
+    width: 10.5%;
+    height: 200px;
+    border: 1px solid gainsboro;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.articleTitle{
+    font-size: 22px;
+    height: 50px;
+    color: rgb(46, 103, 245);
+}
+
+.articleContent{
+    
+}
+
+.articleTag{
+    display: flex;
+    width: 100%;
+}
+
+.tagImg{
+    width: 35px;
+}
+
+.articleTag > div{
+    margin-left: 20px;
+    align-self: center;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    color: gray;
+    background-color: rgb(238, 240, 242);
+}
+
+.articleBtn{
+    position: relative;
+    bottom:150px;
+}
+
+#articleLeft{
+    Right:17px;
+}
+
+#articleRight{
+    left: 92.5vw;
+}
+
+#section3{
+    padding: 50px;
+}
+
+#section3Title{
+    font-size: 55px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#productList{
+    display: grid;
+    grid-row-gap: 30px;
+    grid-column-gap: 30px;
+    grid-template: 300px 300px 300px/ 1fr 1fr 1fr 1fr;
+}
+
+.allProduct{
+    border: 1px solid;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.allProduct > img{
+    width: 80px;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.allProduct > a{
+    margin-top: auto;
+    text-align: center;
+}
+
+.allProduct > a:hover{
+    text-decoration-line: underline;
+}
+
+.productTitle{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.productContent{
+    font-size: 18px;
+}
+
+#productListBtn{
+    display: block;
+    color: white;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: rgb(33, 89, 230);
+    border-radius: 5px;
+    width: fit-content;
+    height:40px;
+    line-height: 40px;
+}
+
+#productListBtn:hover{
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.1);
 }

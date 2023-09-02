@@ -45,3 +45,4 @@ function dismiss(){
 function start(){
     window.location.href = "https://developers.google.com/profile/u/new?hl=en";
 }
+
