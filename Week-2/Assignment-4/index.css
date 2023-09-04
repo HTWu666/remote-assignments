@@ -1,0 +1,86 @@
+body{
+    margin: 0px;
+}
+nav{
+    display: flex;
+    background-color: rgb(235, 235, 235);
+    align-items: center;
+}
+
+nav > div{
+    margin-left: 20px;
+}
+
+nav > ul{
+    display: flex;
+    flex:auto;
+    justify-content: end;
+    list-style: none;
+}
+
+nav > ul > li{
+    margin-right: 30px;
+}
+
+#headerTitle{
+    background-color: rgb(166, 211, 240);
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+#sectionTitle{
+    font-weight: bold;
+    font-size: 30px;
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+}
+
+.allPart{
+    width: 1200px;
+    justify-content: center;
+    display: grid;
+    grid-template: 150px 150px / 1fr 1fr;
+    grid-column-gap: 20px; /*設計區塊間的欄方向間隔*/
+    grid-row-gap: 20px; /*設計區塊間的列方向間隔*/
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.allContentBox{
+    background-color: rgb(132, 144, 148);
+    height: 150px;
+    text-align: center;
+}
+
+.loadMoreBtn{
+    background-color: rgb(160, 200, 243);
+    height: 40px;
+    width: 110px;
+    line-height: 40px;
+    text-align: center;
+    align-self: center;
+}
+
+#part2{
+    display: none;
+}
