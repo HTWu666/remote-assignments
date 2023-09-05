@@ -2,11 +2,10 @@ function count(input) {
     const obj = {};
 
     for (let i = 0; i < input.length; i++) {
-        if (!(input[i] in obj)){
-            obj[input[i]] = 1;
-            console.log(obj);
-        } else {
+        if (input[i] in obj){
             obj[input[i]]++;
+        } else {
+            obj[input[i]] = 1;
         }
     }
 
@@ -23,10 +22,10 @@ function groupByKey(input) {
         let key = input[i]["key"];
         let value = input[i]["value"];
 
-        if (!(key in obj)){
-            obj[key] = value;
-        } else {
+        if (key in obj){
             obj[key] += value;
+        } else {
+            obj[key] = value;
         }
     }
 
