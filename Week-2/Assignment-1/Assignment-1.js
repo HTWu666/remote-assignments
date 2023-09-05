@@ -1,5 +1,9 @@
 function max(numbers) {
-    let max = 0;
+    if (numbers.length === 0){
+        return;
+    }
+
+    let max = numbers[0];
     for (let i = 0; i < numbers.length; i++) {
         if (numbers[i] > max) {
             max = numbers[i];
@@ -10,6 +14,10 @@ function max(numbers) {
 }
 
 function findPosition(numbers, target) {
+    if (numbers.length === 0){
+        return;
+    }
+    
     for (let i = 0; i < numbers.length; i++) {
         if (numbers[i] === target) {
             return i;
