@@ -1,4 +1,4 @@
-function avg(data) {
+const avg = (data) => {
     const size = data.size;
     const products = data.products;
     let totalPrice = 0;
