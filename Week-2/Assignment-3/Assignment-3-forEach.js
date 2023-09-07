@@ -1,7 +1,8 @@
 // Modify count function with forEach method
 // forEach method1 has reusability
 const output1 = {};
-function count1(element){
+
+const count1 = (element) => {
     if ((element in output1)){
         output1[element]++;
     } else {
@@ -15,6 +16,7 @@ console.log(output1); // should print {a:3, b:1, c:2, x:1}
 
 // forEach method2 with arrow function
 const output2 = {};
+
 input1.forEach(element => {
     if ((element in output2)){
         output2[element]++;
@@ -22,12 +24,14 @@ input1.forEach(element => {
         output2[element] = 1;
     }
 })
+
 console.log(output2); // should print {a:3, b:1, c:2, x:1}
 
 // Modify groupByKey function with forEach method
 // forEach method1 has reusability
 const output3 = {};
-function groupByKey1(object){
+
+const groupByKey1(object) => {
     let key = object["key"];
     let value = object["value"];
 
@@ -50,6 +54,7 @@ console.log(output3); // should print {a:6, b:1, c:7}
 
 // forEach method2 with arrow function
 const output4 = {};
+
 input2.forEach(object => {
     let key = object["key"];
     let value = object["value"];
@@ -60,4 +65,5 @@ input2.forEach(object => {
         output4[key] = value;
     }
 })
+
 console.log(output4); // should print {a:6, b:1, c:7}

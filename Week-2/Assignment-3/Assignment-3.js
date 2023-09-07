@@ -1,4 +1,4 @@
-function count(input) {
+const count = (input) => {
     const obj = {};
 
     for (let i = 0; i < input.length; i++) {
@@ -15,7 +15,7 @@ function count(input) {
 let input1 = ["a", "b", "c", "a", "c", "a", "x"];
 console.log(count(input1)); // should print {a:3, b:1, c:2, x:1}
 
-function groupByKey(input) {
+const groupByKey = (input) => {
     const obj = {};
 
     for (let i = 0; i < input.length; i++) {
