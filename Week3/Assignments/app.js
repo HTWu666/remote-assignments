@@ -28,7 +28,7 @@ app.get('/data', (req, res) => {
     let number = req.query.number
 
     if (number === undefined) {
-        return res.send('Lack of Parameter');
+        return res.send('Lack of Parameter')
     } else if (!isNaN(number)) {
         number = parseInt(number)
         let sum = 0
@@ -44,7 +44,7 @@ app.get('/data', (req, res) => {
 })
 
 app.get('/myName', (req, res) => {
-    let name = req.cookies.name;
+    let name = req.cookies.name
 
     if (name !== undefined) {
         return res.send(`Your name is ${name}.`)
@@ -54,7 +54,7 @@ app.get('/myName', (req, res) => {
 })
 
 app.get('/trackName', (req, res) => {
-    let name = req.query.name;
+    let name = req.query.name
 
     res.cookie('name', name)
 
@@ -63,5 +63,5 @@ app.get('/trackName', (req, res) => {
 
 // run the server on the specific port
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Server is running on http://localhost:${port}/`)
 })
