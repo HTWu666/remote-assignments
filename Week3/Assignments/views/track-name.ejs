@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Form</title>
+</head>
+<body>
+    <form action="/trackName">
+        <input type="text" name="name" id="input-name">
+        <button onclick="check(event)">Submit</button>
+    </form>
+
+    <script>
+        const inputName = document.querySelector("#input-name");
+        
+        // If the input name is empty, then won't return to backend
+        const check = (event) => {
+            let name = inputName.value.trim();
+
+            if (name === "") {
+                alert("Name cannot be empty!");
+                event.preventDefault();
+            }
+        }
+    </script>
+</body>
+</html>
