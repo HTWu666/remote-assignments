@@ -13,13 +13,15 @@
     <script>
         const inputNumber = document.querySelector("#input-number");
 
-        const submit = () => {
-            let number = inputNumber.value;
-            fetch(`/data?number=${number}`).then((response) => {
-                return response.text();
-            }).then((data) => {
+        const submit = async () => {
+            try {
+                let number = inputNumber.value;
+                const response = await fetch(`/data?number=${number}`);
+                const data = await response.text();
                 document.querySelector("#sum").textContent = data;
-            });
+            } catch (error) {
+                console.log(error);
+            }
         }
     </script>
 </body>
