@@ -29,8 +29,11 @@ app.get('/data', (req, res) => {
 
     if (number === undefined) {
         return res.send('Lack of Parameter')
-    } else if (!isNaN(number)) {
-        number = parseInt(number)
+    }
+
+    number = parseInt(number)
+
+    if (!isNaN(number) && number >= 0) {
         let sum = 0
 
         for (let i = 1; i <= number; i++) {
