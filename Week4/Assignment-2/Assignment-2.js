@@ -2,7 +2,7 @@ function ajax(src, callback) {
     // your code here
     fetch(src, {method:'GET'})
         .then(response => response.json())
-        .then(data => render(data));
+        .then(data => callback(data));
 }
 
 function render(data) {
