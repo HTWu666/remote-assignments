@@ -10,11 +10,11 @@ function render(data) {
     // document.createElement() and appendChild() methods are preferred.
     document.body.innerHTML = '';
 
-    for (let i = 0; i < data.length; i++) {
+    data.forEach(item => {
         const product = document.createElement('div');
-        product.textContent = `${data[i].name}, ${data[i].price}, ${data[i].description}`;
+        product.textContent = `${item.name}, ${item.price}, ${item.description}`;
         document.body.appendChild(product);
-    }
+    });
 }
 
 ajax(
