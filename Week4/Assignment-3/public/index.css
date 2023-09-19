@@ -1,0 +1,40 @@
+section {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow:
+    5px 5px 5px rgba(212, 212, 212, 0.5), /* 右下角陰影 */
+    -5px -5px 5px rgba(212, 212, 212, 0.5), /* 左上角陰影 */
+    -5px 5px 5px rgba(212, 212, 212, 0.5), /* 左下角陰影 */
+    5px -5px 5px rgba(212, 212, 212, 0.5); /* 右上角陰影 */
+}
+
+.form-title{
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.form-input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.submit-btn {
+    background-color: rgb(163, 234, 252);
+    width: 100%;
+    height: 30px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: rgb(158, 194, 225);
+}

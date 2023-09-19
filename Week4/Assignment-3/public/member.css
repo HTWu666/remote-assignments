@@ -1,0 +1,15 @@
+body{
+    margin: 0px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    background-color: aliceblue;
+}
+
+#welcome-msg {
+    font-size: 50px;
+}
