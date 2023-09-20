@@ -19,7 +19,7 @@ app.post('/signup', async(req, res) => {
     const { email, password } = req.body
 
     const connection = await getConnection()
-    const [rows, _] = await query('SELECT * FROM user WHERE email = ?', [email])
+    const [rows] = await query('SELECT * FROM user WHERE email = ?', [email])
 
     if (!rows.length) {
         await query('INSERT INTO user (email, password) VALUES (?, ?)', [email, password])
@@ -36,7 +36,7 @@ app.post('/signin', async(req, res) => {
     const { email, password } = req.body
 
     const connection = await getConnection()
-    const [rows, _] = await query('SELECT * FROM user WHERE email = ? AND password = ?', [email, password])
+    const [rows] = await query('SELECT * FROM user WHERE email = ? AND password = ?', [email, password])
     connection.release()
 
     if (!rows.length) {
