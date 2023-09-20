@@ -1,7 +1,8 @@
 const express = require('express')
 const mysql = require('mysql2/promise')
-const dbconfig = require('./dbconfig')
 const port = 3000;
+const dotenv = require('dotenv')
+dotenv.config()
 
 const app = express()
 
@@ -10,7 +11,13 @@ app.use(express.static('./public'))
 app.use(express.json())
 
 // DB connection pool
-const pool = mysql.createPool(dbconfig)
+const pool = mysql.createPool({
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE
+})
+
 const getConnection = () => pool.getConnection()
 const query = (sql, values) => pool.query(sql, values)
 
