@@ -35,30 +35,22 @@
     const signUpPassword = document.querySelector('#sign-up-password');
     const signUpAlert = document.querySelector('#sign-up-alert');
 
-    signUpBtn.addEventListener('click', async (event) => {
+    signUpBtn.addEventListener('click', async(event) => {
         event.preventDefault();
+        signUpAlert.textContent = '';
 
         const email = signUpEmail.value;
         const password = signUpPassword.value;
         signUpEmail.value = '';
         signUpPassword.value = '';
 
-        if (email && password) {
-            try {
-                const response = await axios.post('/signup', { email, password });
-                const data = response.data;
-
-                if (data.success) {
-                    window.location.href = './member.html';
-                } else {
-                    signUpAlert.textContent = 'The email is already registered!';
-                }
-            } catch (error) {
-                console.error('An error occurred:', error);
-            }
-        } else {
-            alert('Please enter both email and password.');
+        try {
+            const response = await axios.post('/signup', { email, password });
+            window.location.href = '/member';               
+        } catch (error) {
+            signUpAlert.textContent = error.response.data.message
         }
+        
     });
 
     const signInBtn = document.querySelector('#sign-in-btn');
@@ -68,28 +60,21 @@
 
     signInBtn.addEventListener('click', async(event) => {
         event.preventDefault();
+        signInAlert.textContent = '';
 
         const email = signInEmail.value;
         const password = signInPassword.value;
         signInEmail.value = '';
         signInPassword.value = '';
 
-        if (email && password) {
-            try {
-                const response = await axios.post('/signin', { email, password });
-                const data = response.data;
-
-                if (data.success) {
-                    window.location.href = './member.html';
-                } else {
-                    signInAlert.textContent = data.msg;
-                }
-            } catch (error) {
-                console.error('An error occurred:', error);
-            }
-        } else {
-            alert('Please enter both email and password.');
+        
+        try {
+            const response = await axios.post('/signin', { email, password });
+            window.location.href = '/member';
+        } catch (error) {
+            signInAlert.textContent = error.response.data.message;
         }
+        
     });
 </script>
 </html>
