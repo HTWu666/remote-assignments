@@ -16,33 +16,31 @@ const user = require('../models/memberSys')
 
 const signUp = async (req, res) => {
     const { email, password } = req.body
+    
     try {
         const result = await user.signUp(email, password)
-    
-        if (result) {
-            res.status(201).cookie('SIGNEDIN', true).json({message: 'Signup successfully'})
-        } else {
-            res.status(409).json({message: 'Already Registered'})
-        } 
+        res.status(201).cookie('SIGNEDIN', true).json({message: 'Signup successfully'})
     } catch (error) {
-        res.status(500).json({message: 'Internal Server Error'})
+        if (error.message === 'Already Registered') {
+            res.status(409).json({message: 'Already Registered'})
+        } else {
+            res.status(500).json({message: 'Internal Server Error'})
+        }
     }
-    
-}
+}    
 
 const signIn = async(req, res) => {
     const { email, password } = req.body
 
     try {
         const result = await user.signIn(email, password)
-
-        if (result) {
-            return res.status(200).cookie('SIGNEDIN', true).json({message: 'Login successfully'})
-        } else {
-            return res.status(401).json({message: 'Email or password is wrong'})
-        }
+        res.status(200).cookie('SIGNEDIN', true).json({message: 'Login successfully'})
     } catch (error) {
-        res.status(500).json({message: 'Internal Server Error'})
+        if (error.message === 'LogInFailed') {
+            return res.status(401).json({message: 'Email or password is wrong'})
+        } else {
+            res.status(500).json({message: 'Internal Server Error'})
+        }
     }    
 }
 

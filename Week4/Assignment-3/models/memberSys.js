@@ -16,12 +16,13 @@ exports.signUp = async (email, password) => {
 
         if (!exist.length) {
             const result = await pool.query('INSERT INTO user (email, password) VALUES (?, ?)', [email, password])
-            return true
+            return result
         } else {
-            return false
+            throw new Error('Already Registered')
         }
     } catch(error) {
-        return error
+        console.log(error)
+        throw error
     }
 }
 
@@ -30,11 +31,11 @@ exports.signIn = async (email, password) => {
         const [results] = await pool.query('SELECT * FROM user WHERE email = ? AND password = ?', [email, password])
         
         if (results.length) {
-            return true
+            return results
         } else {
-            return false
+            throw new Error('LogInFailed')
         }
     } catch(error) {
-        return error
+        throw error
     }
 }
