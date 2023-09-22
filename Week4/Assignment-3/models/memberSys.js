@@ -12,32 +12,29 @@ const pool = mysql.createPool({
 
 exports.signUp = async (email, password) => {
     try {
-        const [results] = await pool.query('SELECT * FROM user WHERE email = ?', [email])
+        const [exist] = await pool.query('SELECT * FROM user WHERE email = ?', [email])
 
-        if (!results.length) {
-            await pool.query('INSERT INTO user (email, password) VALUES (?, ?)', [email, password])
-            return { success: true }
+        if (!exist.length) {
+            const result = await pool.query('INSERT INTO user (email, password) VALUES (?, ?)', [email, password])
+            return true
         } else {
-            return {success: false, errorMsg: 'AlreadyRegistered'}
+            return false
         }
     } catch(error) {
-        console.error('Sign-up error:', error);
-        return { success: false, errorMsg: error }
+        return error
     }
 }
 
 exports.signIn = async (email, password) => {
     try {
         const [results] = await pool.query('SELECT * FROM user WHERE email = ? AND password = ?', [email, password])
-
+        
         if (results.length) {
-            return { success: true }
+            return true
         } else {
-            return { success: false, errorMsg: 'LoggedInFailed' }
+            return false
         }
     } catch(error) {
-        console.error('Sign-in error:', error);
-        return { success: false, errorMsg: error }
+        return error
     }
-    
 }

@@ -16,32 +16,34 @@ const user = require('../models/memberSys')
 
 const signUp = async (req, res) => {
     const { email, password } = req.body
-    const result = await user.signUp(email, password)
+    try {
+        const result = await user.signUp(email, password)
     
-    if (result.success) {
-        res.status(201).cookie('SIGNEDIN', true).json({message: 'Signup successfully'})
-    } else {
-        if (result.errorMsg === 'AlreadyRegistered'){
-            res.status(409).json({message: 'Already Registered'})
+        if (result) {
+            res.status(201).cookie('SIGNEDIN', true).json({message: 'Signup successfully'})
         } else {
-            res.status(500).json({message: 'Server Error'})
-        }
+            res.status(409).json({message: 'Already Registered'})
+        } 
+    } catch (error) {
+        res.status(500).json({message: 'Internal Server Error'})
     }
+    
 }
 
 const signIn = async(req, res) => {
     const { email, password } = req.body
-    const result = await user.signIn(email, password)
 
-    if (result.success) {
-        res.status(200).cookie('SIGNEDIN', true).json({message: 'Login successfully'})
-    } else {
-        if (result.errorMsg === 'LoggedInFailed') {
-            res.status(400).json({message: 'Email or password is wrong'})
+    try {
+        const result = await user.signIn(email, password)
+
+        if (result) {
+            return res.status(200).cookie('SIGNEDIN', true).json({message: 'Login successfully'})
         } else {
-            res.status(500).json({message: 'Server Error'})
+            return res.status(401).json({message: 'Email or password is wrong'})
         }
-    }
+    } catch (error) {
+        res.status(500).json({message: 'Internal Server Error'})
+    }    
 }
 
 const signOut = (req, res) => {
