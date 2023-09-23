@@ -33,8 +33,8 @@ app.use('/user', user)
 // Error handler
 app.use(function(err, req, res, next) {
     console.error(err.stack);
-    res.status(500).send('Something broke!');
-  });
+    res.status(500).json({message: 'Internal Server Error'});
+});
 
 // run the server
 app.listen(port, () => console.log(`Server is running on http://localhost:${port}`))
