@@ -38,7 +38,7 @@ app.all('*', (req, res, next) => {
 
 // Global error handler
 app.use((err, req, res, next) => {
-    err.statusCode = err.status || 500
+    err.statusCode = err.statusCode || 500
     res.status(err.statusCode).render('error', {error: {
       status: err.statusCode,
       message: err.message
