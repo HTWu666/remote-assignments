@@ -1,5 +1,5 @@
 const express = require('express')
-const port = 3000;
+const port = 3000
 
 // Instantiate Express app
 const app = express()
@@ -19,7 +19,7 @@ const cookieParser = require('cookie-parser')
 app.use(cookieParser())
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.status(200).render('index')
 })
 
 // import member system router
@@ -30,11 +30,20 @@ app.use('/memberSys', memberSys)
 const user = require('./routes/user')
 app.use('/user', user)
 
-// Error handler
-app.use(function(err, req, res, next) {
-    console.error(err.stack);
-    res.status(500).json({message: 'Internal Server Error'});
-});
+app.all('*', (req, res, next) => {
+  const error = new Error('Not Found')
+  error.status = 404
+  next(error)
+})
+
+// Global error handler
+app.use((err, req, res, next) => {
+    err.statusCode = err.status || 500
+    res.status(err.statusCode).render('error', {error: {
+      status: err.statusCode,
+      message: err.message
+    }})
+})
 
 // run the server
 app.listen(port, () => console.log(`Server is running on http://localhost:${port}`))
