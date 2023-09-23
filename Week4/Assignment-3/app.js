@@ -18,9 +18,17 @@ app.set("views", "./views")
 const cookieParser = require('cookie-parser')
 app.use(cookieParser())
 
+app.get('/', (req, res) => {
+  res.render('index')
+})
+
 // import member system router
 const memberSys = require('./routes/memberSys')
-app.use('/', memberSys)
+app.use('/memberSys', memberSys)
+
+// import user router
+const user = require('./routes/user')
+app.use('/user', user)
 
 // Error handler
 app.use(function(err, req, res, next) {

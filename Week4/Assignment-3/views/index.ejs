@@ -45,12 +45,11 @@
         signUpPassword.value = '';
 
         try {
-            const response = await axios.post('/signup', { email, password });
-            window.location.href = '/member';               
+            const response = await axios.post('user/signup', { email, password });
+            window.location.href = '/memberSys';             
         } catch (error) {
             signUpAlert.textContent = error.response.data.message
         }
-        
     });
 
     const signInBtn = document.querySelector('#sign-in-btn');
@@ -67,14 +66,12 @@
         signInEmail.value = '';
         signInPassword.value = '';
 
-        
         try {
-            const response = await axios.post('/signin', { email, password });
-            window.location.href = '/member';
+            const response = await axios.post('user/signin', { email, password });
+            window.location.href = '/memberSys';
         } catch (error) {
             signInAlert.textContent = error.response.data.message;
         }
-        
     });
 </script>
 </html>
