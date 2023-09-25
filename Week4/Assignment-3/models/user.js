@@ -21,7 +21,7 @@ const getUser = async(email) => {
 
 const createUser = async(email, password) => {
     try {
-        return await pool.query('INSERT INTO user (email, password) VALUES (?, ?)', [email, password])
+        return pool.query('INSERT INTO user (email, password) VALUES (?, ?)', [email, password])
     } catch (error) {
         throw error
     }
